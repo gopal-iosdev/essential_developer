@@ -12,6 +12,7 @@
 		4BE3FA1E2901A5C90005EB1D /* EssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3FA1D2901A5C90005EB1D /* EssentialFeedTests.swift */; };
 		4BE3FA1F2901A5C90005EB1D /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BE3FA112901A5C80005EB1D /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BE3FA292901A6240005EB1D /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3FA282901A6240005EB1D /* FeedItem.swift */; };
+		4BE3FA2B2901A67E0005EB1D /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE3FA2A2901A67E0005EB1D /* FeedLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		4BE3FA182901A5C90005EB1D /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE3FA1D2901A5C90005EB1D /* EssentialFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedTests.swift; sourceTree = "<group>"; };
 		4BE3FA282901A6240005EB1D /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		4BE3FA2A2901A67E0005EB1D /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				4BE3FA112901A5C80005EB1D /* EssentialFeed.h */,
 				4BE3FA122901A5C80005EB1D /* EssentialFeed.docc */,
 				4BE3FA282901A6240005EB1D /* FeedItem.swift */,
+				4BE3FA2A2901A67E0005EB1D /* FeedLoader.swift */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE3FA2B2901A67E0005EB1D /* FeedLoader.swift in Sources */,
 				4BE3FA292901A6240005EB1D /* FeedItem.swift in Sources */,
 				4BE3FA132901A5C80005EB1D /* EssentialFeed.docc in Sources */,
 			);
