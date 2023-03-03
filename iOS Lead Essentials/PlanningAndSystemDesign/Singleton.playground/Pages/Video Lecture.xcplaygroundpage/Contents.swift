@@ -18,8 +18,6 @@ struct FeedItem {}
 class ApiClient {
     static let instance = ApiClient()
     
-    private init() {}
-    
     func login(completion: (LoggedInUser) -> Void) {}
     func loadFeed(completion: (FeedItem) -> Void) {}
 }
