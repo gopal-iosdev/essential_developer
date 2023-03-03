@@ -9,28 +9,27 @@
 
 import UIKit
 
-// MARK: -  Singleton
-
-struct LoggedInUser {}
-
-struct FeedItem {}
-
-class ApiClient {
-    static let instance = ApiClient()
-    
-    func login(completion: (LoggedInUser) -> Void) {}
-    func loadFeed(completion: (FeedItem) -> Void) {}
-}
-
-let client = ApiClient.instance
-
 // MARK: - singleton
 
 let urlSession = URLSession.shared
 
 let urlSessionTwo = URLSession()
 
-// MARK: - Testing Singleton
+// MARK: - Api Module
+
+class ApiClient {
+    static let instance = ApiClient()
+    
+    func execute(_ : URLRequest, completion: (Data) -> Void) {}
+}
+
+// MARK: - Login Module
+
+struct LoggedInUser {}
+
+extension ApiClient {
+    func login(completion: (LoggedInUser) -> Void) {}
+}
 
 class LoginViewController: UIViewController {
     var api = ApiClient.instance
@@ -40,6 +39,14 @@ class LoginViewController: UIViewController {
             // show feed screen
         }
     }
+}
+
+// MARK: - Feed Module
+
+struct FeedItem {}
+
+extension ApiClient {
+    func loadFeed(completion: (FeedItem) -> Void) {}
 }
 
 class FeedViewController: UIViewController {
