@@ -9,12 +9,6 @@
 
 import UIKit
 
-// MARK: - singleton
-
-let urlSession = URLSession.shared
-
-let urlSessionTwo = URLSession()
-
 // MARK: - Api Module
 
 class ApiClient {
@@ -23,43 +17,75 @@ class ApiClient {
     func execute(_ : URLRequest, completion: (Data) -> Void) {}
 }
 
-// MARK: - Login Module
+// MARK: - Main Module
 
-struct LoggedInUser {}
+typealias LoginClosure = (LoggedInUser) -> Void
 
 extension ApiClient {
-    func login(completion: (LoggedInUser) -> Void) {}
+    func login(completion: LoginClosure) {}
+}
+
+typealias FeedItemsClosure = (FeedItem) -> Void
+
+extension ApiClient {
+    func loadFeed(completion: FeedItemsClosure) {}
+}
+
+// MARK: - Login Module
+
+struct LoggedInUser {
+    let name: String
 }
 
 class LoginViewController: UIViewController {
-    var api = ApiClient.instance
+    var login: ((LoginClosure) -> Void)?
     
     func didTapLogin() {
-        api.login { user in
+        login? { user in
             // show feed screen
+            print("Hello \(user)")
         }
     }
 }
 
 // MARK: - Feed Module
 
-struct FeedItem {}
-
-extension ApiClient {
-    func loadFeed(completion: (FeedItem) -> Void) {}
+struct FeedItem {
+    let type: String
 }
 
 class FeedViewController: UIViewController {
-    var api = ApiClient.instance
+    var loadFeed: ((FeedItemsClosure) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        api.loadFeed { feedItems in
+        loadFeedItems()
+    }
+    
+    func loadFeedItems() {
+        loadFeed? { feedItem in
             // Show Feed
+            
+            print("User \(feedItem.type)")
         }
     }
 }
+
+let loginVC = LoginViewController()
+let user = LoggedInUser(name: "randy")
+loginVC.login = { completion in
+    completion(user)
+}
+loginVC.didTapLogin()
+
+let feedVC = FeedViewController()
+let feed = FeedItem(type: "Liked a photo")
+feedVC.loadFeed = { completion in
+    completion(feed)
+}
+feedVC.loadFeedItems()
+
 
 
 //: [Next](@next)
