@@ -141,16 +141,12 @@ class FeedViewModel {
 }
 
 class FeedViewController: UIViewController {
-    let feedViewModel: FeedViewModel
+    var feedViewModel: FeedViewModel!
     
-    init(feedViewModel: FeedViewModel) {
-        self.feedViewModel = feedViewModel
+    convenience init(feedViewModel: FeedViewModel) {
+        self.init()
         
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.feedViewModel = feedViewModel
     }
     
     override func viewDidLoad() {
