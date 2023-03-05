@@ -11,51 +11,147 @@ import UIKit
 
 // MARK: - Api Module
 
-class ApiClient {
-    static let instance = ApiClient()
-    
-    func execute(_ : URLRequest, completion: (Data) -> Void) {}
+typealias ApiResponse = (Data) -> Void
+
+final class APIClient {
+    static let shared = APIClient()
+    func execute(_: URLRequest, completion: ApiResponse) {
+        completion(Data())
+    }
 }
-
-// MARK: - Main Module
-
-typealias LoginClosure = (LoggedInUser) -> Void
-
-extension ApiClient {
-    func login(completion: LoginClosure) {}
-}
-
-typealias FeedItemsClosure = (FeedItem) -> Void
-
-extension ApiClient {
-    func loadFeed(completion: FeedItemsClosure) {}
-}
-
-// MARK: - Login Module
 
 struct LoggedInUser {
     let name: String
 }
 
-class LoginViewController: UIViewController {
-    var login: ((LoginClosure) -> Void)?
+typealias LoginClosure = (LoggedInUser) -> Void
+
+protocol LoginServiceProtocol {
+    func login(completion: LoginClosure)
+}
+
+class LoginApiAdapter: LoginServiceProtocol {
+    private let apiClient: APIClient
     
-    func didTapLogin() {
-        login? { user in
-            // show feed screen
-            print("Hello \(user)")
+    init(apiClient: APIClient) {
+        self.apiClient = apiClient
+    }
+    
+    func login(completion: LoginClosure) {
+        
+        print("Called LoginClientAdapter")
+        
+        apiClient.execute(URLRequest(url: URL(string: "http://sample.com")!)) { (data) in
+            
+            print("Execute request")
+            
+            // Step 1: convert data to LoggedInUser
+            let convertedUser = LoggedInUser(name: "User 1") // -> Assume that this loggedInUser is converted from data
+            
+            // Step 2: update to completion
+            completion(convertedUser)
         }
     }
 }
-
-// MARK: - Feed Module
 
 struct FeedItem {
     let type: String
 }
 
+typealias FeedItemsClosure = (FeedItem) -> Void
+
+protocol FeedServiceProtocol {
+    func loadFeed(completion: FeedItemsClosure)
+}
+
+class FeedApiAdapter: FeedServiceProtocol {
+    private let apiClient: APIClient
+    
+    init(apiClient: APIClient) {
+        self.apiClient = apiClient
+    }
+    
+    func loadFeed(completion: FeedItemsClosure) {
+        
+        print("Called LoginClientAdapter")
+        
+        apiClient.execute(URLRequest(url: URL(string: "http://sample.com")!)) { (data) in
+            
+            print("Execute request")
+            
+            // Step 1: convert data to FeedItem
+            let convertedFeedIttem = FeedItem(type: "Feed 1") // -> Assume that this feed item is converted from data
+            
+            // Step 2: update to completion
+            completion(convertedFeedIttem)
+        }
+    }
+}
+
+// MARK: - Login Module
+
+class LoginViewModel {
+    private let loginProtocol: LoginServiceProtocol
+    
+    init(loginProtocol: LoginServiceProtocol) {
+        self.loginProtocol = loginProtocol
+    }
+    
+    func didTapLoginButton() {
+        loginProtocol.login { (user) in
+            // show the next step
+            print("User is back")
+        }
+    }
+}
+
+class LoginViewController: UIViewController {
+    
+    let loginViewModel: LoginViewModel
+    
+    init(loginViewModel: LoginViewModel) {
+        self.loginViewModel = loginViewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func didTapLogin() {
+        loginViewModel.didTapLoginButton()
+    }
+}
+
+// MARK: - Feed Module
+
+class FeedViewModel {
+    private let feedProtocol: FeedServiceProtocol
+    
+    init(feedProtocol: FeedServiceProtocol) {
+        self.feedProtocol = feedProtocol
+    }
+    
+    func fetchFeedItems() {
+        feedProtocol.loadFeed { (feedItem) in
+            print("Fetched feed items")
+        }
+    }
+}
+
 class FeedViewController: UIViewController {
-    var loadFeed: ((FeedItemsClosure) -> Void)?
+    let feedViewModel: FeedViewModel
+    
+    init(feedViewModel: FeedViewModel) {
+        self.feedViewModel = feedViewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,26 +160,20 @@ class FeedViewController: UIViewController {
     }
     
     func loadFeedItems() {
-        loadFeed? { feedItem in
-            // Show Feed
-            
-            print("User \(feedItem.type)")
-        }
+        feedViewModel.fetchFeedItems()
     }
 }
 
-let loginVC = LoginViewController()
-let user = LoggedInUser(name: "randy")
-loginVC.login = { completion in
-    completion(user)
-}
+// MARK: - Testing
+
+let loginAdapter = LoginApiAdapter(apiClient: APIClient())
+let loginVM = LoginViewModel(loginProtocol: loginAdapter)
+let loginVC = LoginViewController(loginViewModel: loginVM)
 loginVC.didTapLogin()
 
-let feedVC = FeedViewController()
-let feed = FeedItem(type: "Liked a photo")
-feedVC.loadFeed = { completion in
-    completion(feed)
-}
+let feedAdapter = FeedApiAdapter(apiClient: APIClient())
+let feedVM = FeedViewModel(feedProtocol: feedAdapter)
+let feedVC = FeedViewController(feedViewModel: feedVM)
 feedVC.loadFeedItems()
 
 
