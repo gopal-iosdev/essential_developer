@@ -177,5 +177,4 @@ let feedVC = FeedViewController(feedViewModel: feedVM)
 feedVC.loadFeedItems()
 
 
-
 //: [Next](@next)
