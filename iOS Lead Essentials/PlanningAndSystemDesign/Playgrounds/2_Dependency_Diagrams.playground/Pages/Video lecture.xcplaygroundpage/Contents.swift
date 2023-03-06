@@ -7,8 +7,28 @@
  
  */
 
-import Foundation
+import UIKit
 
-var greeting = "Hello, playground"
+protocol FeedLoader {
+    func loadFeed(completion: @escaping ([String]) -> Void)
+}
+
+class FeedViewController: UIViewController {
+    var loader: FeedLoader!
+    
+    convenience init(loader: FeedLoader) {
+        self.init()
+        
+        self.loader = loader
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loader.loadFeed { feedItems in
+            // update UI
+        }
+    }
+}
 
 //: [Next](@next)
