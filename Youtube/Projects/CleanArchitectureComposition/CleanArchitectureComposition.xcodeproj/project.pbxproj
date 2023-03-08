@@ -17,6 +17,15 @@
 		4BACC0CC29B777E70071AB00 /* CleanArchitectureCompositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0CB29B777E70071AB00 /* CleanArchitectureCompositionTests.swift */; };
 		4BACC0D629B777E70071AB00 /* CleanArchitectureCompositionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0D529B777E70071AB00 /* CleanArchitectureCompositionUITests.swift */; };
 		4BACC0D829B777E70071AB00 /* CleanArchitectureCompositionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0D729B777E70071AB00 /* CleanArchitectureCompositionUITestsLaunchTests.swift */; };
+		4BACC0E529B778390071AB00 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0E429B778390071AB00 /* LoginUseCase.swift */; };
+		4BACC0E729B7813F0071AB00 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0E629B7813F0071AB00 /* User.swift */; };
+		4BACC0E929B81B220071AB00 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0E829B81B220071AB00 /* LoginPresenter.swift */; };
+		4BACC0EB29B81C2E0071AB00 /* CrashlyticsLoginTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0EA29B81C2E0071AB00 /* CrashlyticsLoginTracker.swift */; };
+		4BACC0ED29B81C970071AB00 /* FirebaseAnalyticsLoginTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0EC29B81C970071AB00 /* FirebaseAnalyticsLoginTracker.swift */; };
+		4BACC0EF29B81DED0071AB00 /* LoginUseCaseOutputComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0EE29B81DED0071AB00 /* LoginUseCaseOutputComposerTests.swift */; };
+		4BACC0F129B81E1E0071AB00 /* LoginUseCaseOutputComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0F029B81E1E0071AB00 /* LoginUseCaseOutputComposer.swift */; };
+		4BACC0F329B823C20071AB00 /* LoggingUseCaseFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0F229B823C20071AB00 /* LoggingUseCaseFactoryTests.swift */; };
+		4BACC0F529B823D60071AB00 /* LoggingUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BACC0F429B823D60071AB00 /* LoggingUseCaseFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,15 @@
 		4BACC0D129B777E70071AB00 /* CleanArchitectureCompositionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanArchitectureCompositionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BACC0D529B777E70071AB00 /* CleanArchitectureCompositionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanArchitectureCompositionUITests.swift; sourceTree = "<group>"; };
 		4BACC0D729B777E70071AB00 /* CleanArchitectureCompositionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanArchitectureCompositionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4BACC0E429B778390071AB00 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		4BACC0E629B7813F0071AB00 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4BACC0E829B81B220071AB00 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		4BACC0EA29B81C2E0071AB00 /* CrashlyticsLoginTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLoginTracker.swift; sourceTree = "<group>"; };
+		4BACC0EC29B81C970071AB00 /* FirebaseAnalyticsLoginTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsLoginTracker.swift; sourceTree = "<group>"; };
+		4BACC0EE29B81DED0071AB00 /* LoginUseCaseOutputComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseOutputComposerTests.swift; sourceTree = "<group>"; };
+		4BACC0F029B81E1E0071AB00 /* LoginUseCaseOutputComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseOutputComposer.swift; sourceTree = "<group>"; };
+		4BACC0F229B823C20071AB00 /* LoggingUseCaseFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingUseCaseFactoryTests.swift; sourceTree = "<group>"; };
+		4BACC0F429B823D60071AB00 /* LoggingUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingUseCaseFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +127,10 @@
 				4BACC0BF29B777E70071AB00 /* LaunchScreen.storyboard */,
 				4BACC0C229B777E70071AB00 /* Info.plist */,
 				4BACC0BA29B777E60071AB00 /* CleanArchitectureComposition.xcdatamodeld */,
+				4BACC0F629B827C10071AB00 /* Business Logic */,
+				4BACC0F729B827DC0071AB00 /* Presenter */,
+				4BACC0F829B827EB0071AB00 /* Analytics */,
+				4BACC0F929B827F60071AB00 /* Main */,
 			);
 			path = CleanArchitectureComposition;
 			sourceTree = "<group>";
@@ -117,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				4BACC0CB29B777E70071AB00 /* CleanArchitectureCompositionTests.swift */,
+				4BACC0FA29B828220071AB00 /* Main */,
 			);
 			path = CleanArchitectureCompositionTests;
 			sourceTree = "<group>";
@@ -128,6 +151,50 @@
 				4BACC0D729B777E70071AB00 /* CleanArchitectureCompositionUITestsLaunchTests.swift */,
 			);
 			path = CleanArchitectureCompositionUITests;
+			sourceTree = "<group>";
+		};
+		4BACC0F629B827C10071AB00 /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+				4BACC0E629B7813F0071AB00 /* User.swift */,
+				4BACC0E429B778390071AB00 /* LoginUseCase.swift */,
+			);
+			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		4BACC0F729B827DC0071AB00 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4BACC0E829B81B220071AB00 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4BACC0F829B827EB0071AB00 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				4BACC0EA29B81C2E0071AB00 /* CrashlyticsLoginTracker.swift */,
+				4BACC0EC29B81C970071AB00 /* FirebaseAnalyticsLoginTracker.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		4BACC0F929B827F60071AB00 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4BACC0F029B81E1E0071AB00 /* LoginUseCaseOutputComposer.swift */,
+				4BACC0F429B823D60071AB00 /* LoggingUseCaseFactory.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4BACC0FA29B828220071AB00 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4BACC0EE29B81DED0071AB00 /* LoginUseCaseOutputComposerTests.swift */,
+				4BACC0F229B823C20071AB00 /* LoggingUseCaseFactoryTests.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +330,15 @@
 			files = (
 				4BACC0B629B777E60071AB00 /* ViewController.swift in Sources */,
 				4BACC0B229B777E60071AB00 /* AppDelegate.swift in Sources */,
+				4BACC0ED29B81C970071AB00 /* FirebaseAnalyticsLoginTracker.swift in Sources */,
+				4BACC0E929B81B220071AB00 /* LoginPresenter.swift in Sources */,
+				4BACC0F529B823D60071AB00 /* LoggingUseCaseFactory.swift in Sources */,
+				4BACC0E729B7813F0071AB00 /* User.swift in Sources */,
 				4BACC0B429B777E60071AB00 /* SceneDelegate.swift in Sources */,
+				4BACC0F129B81E1E0071AB00 /* LoginUseCaseOutputComposer.swift in Sources */,
 				4BACC0BC29B777E60071AB00 /* CleanArchitectureComposition.xcdatamodeld in Sources */,
+				4BACC0EB29B81C2E0071AB00 /* CrashlyticsLoginTracker.swift in Sources */,
+				4BACC0E529B778390071AB00 /* LoginUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BACC0F329B823C20071AB00 /* LoggingUseCaseFactoryTests.swift in Sources */,
+				4BACC0EF29B81DED0071AB00 /* LoginUseCaseOutputComposerTests.swift in Sources */,
 				4BACC0CC29B777E70071AB00 /* CleanArchitectureCompositionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
