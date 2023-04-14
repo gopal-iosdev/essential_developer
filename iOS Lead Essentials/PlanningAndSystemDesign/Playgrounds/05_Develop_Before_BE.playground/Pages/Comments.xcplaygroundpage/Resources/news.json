@@ -1,0 +1,46 @@
+{
+  "status": "ok",
+  "totalResults": 3,
+  "news": [
+    {
+      "source": {
+        "id": null,
+        "name": "Coindesk.com"
+      },
+      "tags": [
+        {
+          "name": "fintech",
+          "id": 11
+        }
+      ],
+      "author": "Adam B. Levine",
+      "title": "Libre Not Libra – Thinking Critically About Facebook’s Blockchain Project"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Innovationexcellence.com"
+      },
+      "author": "Greg Satell",
+      "title": "The Limited Value Of Ideas"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Bitcoinist.com"
+      },
+      "tags": [
+        {
+          "name": "fintech",
+          "id": 11
+        },
+        {
+          "name": "crypto",
+          "id": 34
+        }
+      ],
+      "author": "Christine Vasileva",
+      "title": "Crypto Weekend Gains: ETH, ADA, XRP Pump on Sunday"
+    }
+  ]
+}
