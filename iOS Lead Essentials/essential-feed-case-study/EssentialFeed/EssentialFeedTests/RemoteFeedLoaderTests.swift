@@ -17,7 +17,7 @@ class HttpClient {
 
 final class RemoteFeedLoaderTests: XCTestCase {
 
-    func test_Init_doesNotRequestData() {
+    func test_init_doesNotRequestData() {
         let client = HttpClient()
         let _ = RemoteFeedLoader()
 
