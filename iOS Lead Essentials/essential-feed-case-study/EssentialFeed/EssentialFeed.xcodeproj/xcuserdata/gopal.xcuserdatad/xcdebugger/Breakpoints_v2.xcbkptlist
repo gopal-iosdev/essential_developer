@@ -14,8 +14,8 @@
             filePath = "EssentialFeedTests/RemoteFeedLoaderTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "test_load_deliversItemsOn200HTTPResponseWithJSONItems()"
             landmarkType = "7">
             <Locations>
