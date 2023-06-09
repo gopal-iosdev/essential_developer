@@ -15,6 +15,7 @@
 		4B4C900329F6C7DE005E4F68 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C900229F6C7DE005E4F68 /* RemoteFeedLoaderTests.swift */; };
 		4B4C900629FC10F9005E4F68 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4C900529FC10F9005E4F68 /* RemoteFeedLoader.swift */; };
 		4BCC54992A3367E9004924E9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCC54982A3367E9004924E9 /* HTTPClient.swift */; };
+		4BCC549B2A336853004924E9 /* FeedItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCC549A2A336853004924E9 /* FeedItemsMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		4B4C900229F6C7DE005E4F68 /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 		4B4C900529FC10F9005E4F68 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 		4BCC54982A3367E9004924E9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		4BCC549A2A336853004924E9 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4B4C900529FC10F9005E4F68 /* RemoteFeedLoader.swift */,
+				4BCC549A2A336853004924E9 /* FeedItemsMapper.swift */,
 				4BCC54982A3367E9004924E9 /* HTTPClient.swift */,
 			);
 			path = FeedAPI;
@@ -225,6 +228,7 @@
 				4B4C900629FC10F9005E4F68 /* RemoteFeedLoader.swift in Sources */,
 				4BCC54992A3367E9004924E9 /* HTTPClient.swift in Sources */,
 				4B4C8FFE29EB26AB005E4F68 /* FeedLoader.swift in Sources */,
+				4BCC549B2A336853004924E9 /* FeedItemsMapper.swift in Sources */,
 				4B4C8FFC29EB1B7F005E4F68 /* FeedItem.swift in Sources */,
 				4B4C8FE629EB1B27005E4F68 /* EssentialFeed.docc in Sources */,
 			);
