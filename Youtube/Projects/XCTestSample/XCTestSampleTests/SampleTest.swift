@@ -53,6 +53,11 @@ final class SampleTest: XCTestCase {
         func changeState() {
             state += 1
         }
+
+        deinit {
+            fatalError("Crash!")
+        }
+
     }
 
 }
