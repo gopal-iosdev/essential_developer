@@ -8,8 +8,7 @@
 import XCTest
 
 final class SampleTest: XCTestCase {
-
-    let sample = Sample()
+    var sample: Sample!
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -24,6 +23,16 @@ final class SampleTest: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+
+    override func setUp() {
+        print("setUp - SampleTest identifier: \(ObjectIdentifier(self))")
+
+        sample = Sample()
+    }
+
+    override func tearDown() {
+        sample = nil
     }
 
     func testExample() {
