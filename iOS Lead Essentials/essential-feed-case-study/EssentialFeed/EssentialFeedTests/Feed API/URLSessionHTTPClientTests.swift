@@ -58,7 +58,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
     }
 
     func test_getFromURL_failsOnRequestError() {
-        let requestError = NSError(domain: "any error", code: 1)
+        let requestError = NSError.anyError
 
         let recievedError = resultErrorFor(data: nil, response: nil, error: requestError) as NSError?
 
@@ -67,10 +67,10 @@ final class URLSessionHTTPClientTests: XCTestCase {
     }
 
     func test_getFromURL_failsOnAllInvalidRepresentationCases() {
-        let nonHTTPURLResponse = URLResponse(url: URL.anyURL, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
-        let anyHTTPURLResponse = HTTPURLResponse(url: URL.anyURL, statusCode: 200, httpVersion: nil, headerFields: nil)
-        let anyData = Data("any data".utf8)
-        let anyError = NSError(domain: "any error", code: 0)
+        let nonHTTPURLResponse = URLResponse.nonHTTPURLResponse
+        let anyHTTPURLResponse = HTTPURLResponse.anyHTTPURLResponse
+        let anyData = Data.anyData
+        let anyError = NSError.anyError
 
         XCTAssertNotNil(resultErrorFor(data: nil, response: nil, error: nil))
         XCTAssertNotNil(resultErrorFor(data: nil, response: nonHTTPURLResponse, error: nil))
@@ -179,4 +179,21 @@ final class URLSessionHTTPClientTests: XCTestCase {
 
 private extension URL {
     static let anyURL = URL(string: "https://any-url.com")!
+}
+
+private extension URLResponse {
+    static let nonHTTPURLResponse = URLResponse(url: URL.anyURL, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+}
+
+private extension HTTPURLResponse {
+    static let anyHTTPURLResponse = HTTPURLResponse(url: URL.anyURL, statusCode: 200, httpVersion: nil, headerFields: nil)
+
+}
+
+private extension Data {
+    static let anyData = Data("any data".utf8)
+}
+
+private extension NSError {
+    static let anyError = NSError(domain: "any error", code: 0)
 }
